@@ -1,0 +1,20 @@
+<%- include('header'); %>
+
+  <h1>Shopping</h1>
+
+  <% if (locals.message) { %>
+    <span class="message"><%= message %></span>
+    <% } %>
+
+    <form id="shoppingForm" action="/services/shopping" method="post">
+      <span>Pay From: </span>
+      <select id="from" name="from" required>
+        <option value="checking">Checking</option>
+        <option value="savings">Savings</option>
+        <option value="credit">Credit Card</option>
+      </select>
+      <input type="number" name="amount" id="amount" required placeholder="amount" step="0.01">
+      <button type="submit">Purchase</button>
+    </form>
+
+    <br><a href="/">Back to Accounts Summary</a>
